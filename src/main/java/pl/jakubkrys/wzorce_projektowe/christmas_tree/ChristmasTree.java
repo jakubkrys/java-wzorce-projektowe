@@ -1,4 +1,6 @@
 package pl.jakubkrys.wzorce_projektowe.christmas_tree;
 
-public class ChristmasTree {
+public interface ChristmasTree {
+
+    String decorate();
 }

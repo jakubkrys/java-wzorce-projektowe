@@ -4,23 +4,22 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ChristmasTreeTest {
+public class ChristmasTreeImplTest {
 
     @Test
     public void christmasTreeWithGarland() {
         ChristmasTreeImpl christmasTreeImpl = new ChristmasTreeImpl();
 
-        ChristmasTree tree1 = new Garland(christmasTreeImpl);
+        ChristmasTree tree = new Garland(christmasTreeImpl);
 
-        assertEquals(tree1.decorate(), "Christmas tree with Garland");
+        assertEquals(tree.decorate(), "Christmas tree with Garland");
     }
 
     @Test
     public void christmasTreeWithGarlandWithGarlandWithBubbleLights() {
 
+        ChristmasTree tree = new BubbleLights(new Garland(new Garland(new ChristmasTreeImpl())));
 
-        ChristmasTree tree2 = new BubbleLights(new Garland(new Garland(new ChristmasTreeImpl())));
-
-        assertEquals(tree2.decorate(), "Christmas tree with Garland with Garland with Bubble Lights");
+        assertEquals(tree.decorate(), "Christmas tree with Garland with Garland with Bubble Lights");
     }
 }
